@@ -1,0 +1,94 @@
+<app-body-header></app-body-header>
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-5 col-sm-5 col-xs-5">
+        <div class="formview" *ngIf="!hiddenForm">
+            <h4>Depot sur son compte</h4>
+            <form [formGroup]="depositForm" (ngSubmit)="createDeposit()">
+              <div class="input-group mb-3 md-form">
+                    <label for="amount">Entrer le montant du depot</label>
+                    <input type="text" id="amount" class="form-control" name="amount" formControlName="amount">
+              </div>
+              <div class="input-group mb-3 md-form">
+                <button type="submit" class="btn btn-primary">Proceder au  depot</button>
+              </div>
+            </form>
+        </div>
+        <div class="paieview" *ngIf="hiddenForm">
+            <section class="form-elegant">
+                <!--Form without header-->
+                    <div class="card">
+
+                        <div class="card-body mx-4">
+
+                            <!--Header-->
+                            <div class="text-center">
+                                <h3 class="dark-grey-text mb-5">
+                                    <strong>Detail de l'operation</strong>
+                                  <button type="button" class="close" aria-label="Close" (click)="closeForm()">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </h3>
+                            </div>
+
+                            <!--Body-->
+                          <div class="list-group">
+                              <a  class="list-group-item list-group-item-action flex-column align-items-start active">
+                                  <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Montant du depot</h5>
+                                  </div>
+                                  <p class="mb-1"> {{ depositForm.value.amount }}</p>
+                              </a>
+                              <a  class="list-group-item list-group-item-action flex-column align-items-start">
+                                  <div class="d-flex w-100 justify-content-between">
+                                      <h5 class="mb-1">Solde actuel</h5>
+                                  </div>
+                                  <p class="mb-1">450000  </p>
+                              </a>
+                              
+                          </div>
+                      <br>
+                          
+
+                            <div class="text-center mb-3">
+                                <button type="button" class="btn btn-primary btn-block btn-rounded z-depth-1a waves-effect waves-light">Valider</button>
+                            </div>
+                            <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> ou :</p>
+
+                            <div class="row my-3 d-flex justify-content-center">
+                                <!--Facebook-->
+                                <button type="button" class="btn btn-danger btn-rounded mr-md-3 z-depth-1a waves-effect waves-light">
+                                    <i class="fa fa-trash blue-text text-center"></i>
+                                </button>
+                                <!--Twitter-->
+                                <button type="button" class="btn btn-info btn-rounded mr-md-3 z-depth-1a waves-effect waves-light">
+                                    <i class="fa fa-ban blue-text"></i>
+                                </button>
+                                <!--Google +-->
+                                <button type="button" class="btn btn-success btn-rounded z-depth-1a waves-effect waves-light">
+                                    <i class="fa fa-edit blue-text"></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!--Footer-->
+                        <div class="modal-footer mx-5 pt-3 mb-1">
+                            <p class="font-small grey-text d-flex justify-content-end">
+                                <a  class="blue-text ml-1">Fermer</a>
+                            </p>
+                        </div>
+
+                    </div>
+                <!--/Form without header-->
+            </section>
+        </div>
+
+      </div>
+      <div class="col-md-7 col-sm-7 col-xs-7">
+         <h4>Liste des depots</h4>
+           <app-deposit-list></app-deposit-list>
+      </div>
+  </div>
+</div>

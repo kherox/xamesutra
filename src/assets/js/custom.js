@@ -1,0 +1,1 @@
+$('input[name="end"]').daterangepicker();

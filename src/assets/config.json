@@ -19,20 +19,19 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/css/bootstrap.min.css",
-        "assets/css/mdb.min.css",
-        "assets/css/font-awesome.min.css",
-        "assets/css/daterangepicker.css",
-        "styles.css"
+        "styles.css",
+    "assets/css/bootstrap.css",
+    "assets/css/font-awesome.css",
+    
+    "assets/css/bootstrap-progressbar-3.3.4.min.css",
+    "assets/css/custom.css"
       ],
       "scripts": [
-     "assets/js/jquery-3.3.1.slim.min.js",
-     "assets/js/jquery-3.3.1.min.js",
-     "assets/js/moment.min.js",
-     "assets/js/daterangepicker.js",
-     "assets/js/bootstrap.min.js",
-     "assets/js/custom.js",
-     "assets/js/mdb.min.js"
+        
+    "assets/js/jquery.js",
+    "assets/js/bootstrap.js",
+    "assets/js/bootstrap-progressbar.min.js",
+    "assets/js/custom.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

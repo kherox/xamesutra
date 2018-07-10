@@ -1,0 +1,40 @@
+
+  <form [formGroup]="contractForm" (ngSubmit)="createContract()">
+    <div class="input-group mb-3 md-form">
+      <label for="name">Nom du contract</label>
+      <input type="text" id="name" class="form-control" name="name" formControlName="name">
+    </div>
+
+    <div class="input-group mb-3 md-form">
+      <label for="end">Date de fin</label>
+      <input type="date" id="end" class="form-control" name="end" formControlName="end">
+    </div>
+
+    <div class="input-group mb-3 md-form">
+      <label for="amount">Montant</label>
+      <input type="text" id="amount" class="form-control" name="amount" formControlName="amount">
+    </div>
+
+    <div class="input-group mb-3">
+      <select class="form-control" name="categories" formControlName="categories" id="categories">
+        <option *ngFor="let categorie of categories" [value]="categorie">{{categorie}}</option>
+      </select>
+    </div>
+    <div class="input-group mb-3 md-form" *ngIf="contractForm.value.categories === 'Entreprise'">
+      <select class="form-control" name="referer" formControlName="referer" id="referer">
+        <option *ngFor="let entitie of entities" [value]="entitie.id">{{entitie.name}}</option>
+      </select>
+    </div>
+
+    <div class="input-group mb-3 md-form">
+      <label for="description">Description</label>
+      <textarea class="form-control md-textarea" name="description" formControlName="description" id="description" cols="10" rows="10"></textarea>
+    </div>
+
+    <div class="input-group mb-3 md-form">
+      <button type="submit" class="btn btn-primary">Creer un nouveau contract</button>
+    </div>
+
+
+
+  </form>

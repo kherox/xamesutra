@@ -1,0 +1,138 @@
+<app-body-header></app-body-header>
+
+<div class="container" *ngIf="!hiddenPanel">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-3">
+      <div class="card" style="width: 18rem;">
+        <!-- <img class="card-img-top" src="https://loremflickr.com/320/240" alt="Card image cap"> -->
+        <div class="card-body">
+          <h5 class="card-title">Restaurant Azalai</h5>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Similique expedita voluptatum dolorum veritatis quo ut nesciunt impedit recusandae 
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Samedi 12 Juin 2018</li>
+          <li class="list-group-item">Offre : 850.000</li>
+          <li class="list-group-item">Valeur actuelle  : 800.000</li>
+        </ul>
+        <div class="card-body">
+          <a  class="card-link btn btn-primary btn-sm" (click)="upAmount()">Augmenter</a>
+          <a class="card-link btn btn-success btn-sm" (click)="downAmount()">Reduire</a>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-md-4 col-md-offset-1">
+      <div class="card" style="width: 18rem;">
+        <!-- <img class="card-img-top" src="https://loremflickr.com/320/240" alt="Card image cap"> -->
+        <div class="card-body">
+          <h5 class="card-title">Restaurant Azalai</h5>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique expedita voluptatum dolorum veritatis quo ut nesciunt
+            impedit recusandae
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Samedi 30 Juin 2018</li>
+          <li class="list-group-item">Offre : 150.000</li>
+          <li class="list-group-item">Valeur actuelle : 100.000</li>
+        </ul>
+        <div class="card-body">
+          <a class="card-link btn btn-primary btn-sm">Augmenter</a>
+          <a class="card-link btn btn-success btn-sm">Reduire</a>
+        </div>
+      </div>
+  </div>
+
+    <div class="col-md-4 col-md-offset-1">
+        <div class="card" style="width: 18rem;">
+          <!-- <img class="card-img-top" src="https://loremflickr.com/320/240" alt="Card image cap"> -->
+          <div class="card-body">
+            <h5 class="card-title">Restaurant Azalai</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique expedita voluptatum dolorum veritatis quo ut nesciunt
+              impedit recusandae
+            </p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Samedi 24 Juin 2018</li>
+            <li class="list-group-item">Offre : 500.000</li>
+            <li class="list-group-item">Valeur actuelle : 300.000</li>
+          </ul>
+          <div class="card-body">
+            <a class="card-link btn btn-primary btn-sm">Augmenter</a>
+            <a class="card-link btn btn-success btn-sm">Reduire</a>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container" *ngIf="hiddenPanel">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-3">
+      <div class="card" style="width: 18rem;">
+        <!-- <img class="card-img-top" src="https://loremflickr.com/320/240" alt="Card image cap"> -->
+        <div class="card-body">
+          <h5 class="card-title">Restaurant Azalai</h5>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique expedita voluptatum dolorum veritatis quo ut nesciunt
+            impedit recusandae
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Samedi 12 Juin 2018</li>
+          <li class="list-group-item">Offre : 850.000</li>
+          <li class="list-group-item">Valeur actuelle : 800.000</li>
+        </ul>
+        <div class="card-body">
+           <a  class="card-link btn btn-primary btn-sm" (click)="upAmountHidden()">Augmenter</a>
+          <a class="card-link btn btn-success btn-sm" (click)="downAmountHidden()">Reduire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <form *ngIf="down">
+          <div class="input-group mb-3 md-form">
+              <label for="amount">Entrer le montant a retirer</label>
+              <input type="text" id="amount" class="form-control" name="amount" formControlName="amount">
+          </div>
+
+          <div class="input-group mb-3 md-form">
+            <select name="contract" id="contract" class="form-control">
+              <option value="nom 1">nom 1</option>
+              <option value="nom 1">nom 1</option>
+              <option value="nom 1">nom 1</option>
+              <option value="nom 1">nom 1</option>
+              <option value="nom 1">nom 1</option>
+              <option value="nom 1">nom 1</option>
+              <option value="nom 1">nom 1</option>
+              <option value="nom 1">nom 1</option>
+            </select>
+          </div>
+        <div class="input-group mb-3 md-form">
+          <button type="submit" class="btn btn-info">Valider le transfert</button>
+        </div>
+      </form>
+
+      <form *ngIf="up">
+        <div class="input-group mb-3 md-form">
+            <label for="amount">Entrer la somme a ajouter </label>
+            <input type="text" id="amount" class="form-control" name="amount" formControlName="amount">
+        </div>
+        <div class="input-group mb-3 md-form">
+          <button type="submit" class="btn btn-warning">Valider l'augmentation</button>
+        </div>
+      </form>
+
+
+      <button class="btn btn-info" (click)="close()">Fermer</button>
+        
+    </div>
+
+  </div>
+</div>
