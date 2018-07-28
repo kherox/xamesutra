@@ -1,0 +1,120 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Creation d'une offre</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <button class="btn btn-sm btn-outline-secondary" (click)="goToPageList()">Lister</button>
+        <button class="btn btn-sm btn-outline-secondary">Modifier</button>
+      </div>
+      <!-- <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <span data-feather="calendar"></span>
+        This week
+      </button> -->
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 mb-3">
+      <form class="form-horizontal row-fluid" [formGroup]="ProductAddForm" (ngSubmit)="productSubmit()">
+          <div class="control-group">
+              <label class="control-label" for="name">Titre de l'offre</label>
+              <div class="controls">
+                <input id="name" type="text"
+                  placeholder="Titre de l'offre"
+                  class="form-control"
+                  formControlName="name"
+                  >
+              </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="name">Prix</label>
+                <div class="controls">
+                  <input id="name" type="text"
+                    placeholder="prix de l'offre"
+                    class="form-control"
+                    formControlName="price"
+                    >
+                </div>
+              </div>
+
+
+              <div class="control-group">
+                  <label class="control-label" for="name">Categories</label>
+                  <div class="controls">
+                    <input id="name" type="text"
+                      placeholder="Categorie"
+                      class="form-control"
+                      formControlName="categories"
+                      >
+                  </div>
+              </div>
+
+              <div class="control-group">
+                  <label class="control-label" for="name">Image</label>
+                  <div class="controls">
+                    <input (change)="LoadImage($event)" id="name" type="file"
+                      placeholder="Categorie"
+                      class="form-control"
+                      formControlName="img_url"
+                      >
+                  </div>
+              </div>
+
+              <div class="control-group">
+                  <label class="control-label" for="name">Description</label>
+                  <div class="controls">
+                    <textarea name="description"
+                              formControlName="description"
+                              cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+              </div>
+      </form>
+    </div>
+    <div class="col-lg-6 col-md-12 mb-3">
+        <!--Card-->
+        <div class="card card-cascade wider card-ecommerce">
+            <!--Card image-->
+            <div class="view overlay">
+                <img [src]="img_url" class="card-img-top">
+                <a>
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                </a>
+            </div>
+            <!--Card image-->
+            <!--Card content-->
+            <div class="card-body text-center">
+                <!--Category & Title-->
+                <a href="" class="text-muted">
+                    <h5>{{ProductAddForm.value.name}}</h5>
+                </a>
+                <h4 class="card-title">
+                    <strong>
+                        <a href="">{{ProductAddForm.value.categories}}</a>
+                    </strong>
+                </h4>
+                <!--Description-->
+                <p class="card-text">
+                    {{ProductAddForm.value.description}}
+                </p>
+                <!--Card footer-->
+                <div class="card-footer">
+                    <span class="float-left font-weight-bold">
+                        <strong>{{ProductAddForm.value.price}}</strong>
+                    </span>
+                    <span class="float-right">
+                        <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick Look">
+                            <i class="fa fa-eye grey-text ml-3"></i>
+                        </a>
+                        <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">
+                            <i class="fa fa-heart grey-text ml-3"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <!--Card content-->
+        </div>
+        <!--Card-->
+    </div>
+  </div>
+</div>

@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body-header.component.css']
 })
 export class BodyHeaderComponent implements OnInit {
-
-  constructor() { }
+  currentAppName: any;
+  constructor() { this.currentAppName = 'Xamesutra'; }
 
   ngOnInit() {
   }

@@ -28,6 +28,7 @@ import { DepositItemComponent } from './deposits/deposit-list/deposit-item/depos
 import { AppService } from './app.service';
 import { HttpModule } from '@angular/http';
 import { ContractDetailComponent } from './contracts/contract-detail/contract-detail.component';
+import { ProductAddComponent } from './products/product-add/product-add.component';
 
 
 
@@ -54,7 +55,8 @@ import { ContractDetailComponent } from './contracts/contract-detail/contract-de
     DepositDetailComponent,
     DepositListComponent,
     DepositItemComponent,
-    ContractDetailComponent
+    ContractDetailComponent,
+    ProductAddComponent,
   ],
   imports: [
     BrowserModule,
